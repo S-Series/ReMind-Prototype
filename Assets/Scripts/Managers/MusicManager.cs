@@ -40,11 +40,21 @@ public class MusicManager : MonoBehaviour
 
 public class MusicJsonData
 {
+    //$ UnChange Data
     public int musicId;
+    public Sprite jacket;
+    public AudioSource[] musicAudio = new AudioSource[2];
+    public int specialIndex = 0;
+    public int[] noteCount = new int[5];
+    public int[] difficulty = new int[5];
     public string musicName, musicArtist;
     public double lowestBpm, highestBpm;
-    public int[] difficulty = new int[5];
-    public int specialIndex = 0;
+    
+    //$ Changable Data
+    public bool isShown;
+    public bool[] isOwned = new bool[5];
+    public bool[] isSecret = new bool[5];
+
 }
 
 public class MusicPlayedData
