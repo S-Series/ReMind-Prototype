@@ -23,7 +23,7 @@ public class MusicSelect : MonoBehaviour
 
     public static void PickOutMusicList()
     {
-
+        
     }
 
     public static void SortingMusicList()
@@ -74,4 +74,5 @@ public class MusicSelect : MonoBehaviour
 
         if (isSortingReversed) { SelectableMusicList.Reverse(); }
     }
+
 }

@@ -1,0 +1,31 @@
+{
+    "musicId": 1,
+    "specialIndex": 0,
+    "noteCount": [
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "difficulty": [
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "musicName": "",
+    "musicArtist": "",
+    "lowestBpm": 0.0,
+    "highestBpm": 0.0,
+    "isShown": false,
+    "isSecret": false,
+    "isOwned": [
+        false,
+        false,
+        false,
+        false,
+        false
+    ]
+}
