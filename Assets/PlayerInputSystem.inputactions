@@ -6,6 +6,15 @@
             "id": "453f31a4-71b6-496b-8a3a-335e7119de3c",
             "actions": [
                 {
+                    "name": "MoveUp",
+                    "type": "Button",
+                    "id": "e740f9e8-1200-4ac1-a958-f6a423ec05b2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MoveDown",
                     "type": "Button",
                     "id": "983935fa-5717-444f-b587-f88b719c335d",
@@ -15,18 +24,36 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Test",
+                    "name": "MoveLeft",
                     "type": "Button",
-                    "id": "c56fc1be-39fb-43e2-a66a-f10ab7c7a502",
+                    "id": "9d99f333-bad9-41a7-a932-0189f017b96c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Test1",
+                    "name": "MoveRight",
                     "type": "Button",
-                    "id": "07afc12d-3315-4e9e-8e10-40a4ccae4f83",
+                    "id": "7a819218-73e4-471a-a51f-f653b1cf2d75",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "f9a32fde-37ed-4c4e-b978-87f37c1b8e73",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "0edb58f3-bbd5-482c-8804-cbbebac4bf89",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
@@ -69,23 +96,172 @@
                 },
                 {
                     "name": "",
-                    "id": "14857154-a46f-4ec9-972c-bd305815de85",
-                    "path": "<Keyboard>/leftShift",
+                    "id": "38dd7fd1-4f25-4688-a9b5-ff7bf749b878",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Test",
+                    "action": "MoveLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "0c7dc1a5-ae9b-428d-b802-7c5f3f9f1698",
-                    "path": "<Keyboard>/rightShift",
+                    "id": "022c021c-d60c-435c-87dc-cf2dae24b5b4",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Test1",
+                    "action": "MoveLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0622615a-21a7-4395-b94f-25e60007c4c6",
+                    "path": "<Keyboard>/numpad4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "658184fa-a261-41da-be8e-d58a40c59056",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80949bd3-9a6f-4525-a4fc-ad5dcc80fb94",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a42ca07d-80f4-46d5-8df4-7e3c9bd1e843",
+                    "path": "<Keyboard>/numpad6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67bfde8d-b310-4d68-bced-9d7e12977458",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a13875ae-c2a3-446b-9931-979cd1ef5458",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "987b099c-e418-4a85-a8ab-d4010e7a2b12",
+                    "path": "<Keyboard>/numpad8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e7570b7-9b81-41e7-8310-00c1b072b70a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd6fe77e-3c9f-478d-9c9f-3554da048f2f",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a547f49-4758-44fc-b627-da2295a9decd",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a254d8fe-fb51-4383-9ee5-5bdfb3ec7512",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "GamePlay",
+            "id": "c0efda50-31ec-43fa-be49-9b7f717a6a97",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "0abdf9a7-33da-4115-9454-cf609e060ff8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "10681b3c-a1a7-4e96-a0b0-8102f5c67aaf",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

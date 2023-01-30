@@ -34,6 +34,7 @@ public class MusicSelect : MonoBehaviour
             case SortingOption.None:
                 SelectableMusicList = SelectableMusicList
                     .OrderBy(item => item.musicId).ToList();
+                SettingValue.lastMusicSorting = 0;
                 break;
 
             //$ MusicName => MusicId
@@ -41,6 +42,7 @@ public class MusicSelect : MonoBehaviour
                 SelectableMusicList = SelectableMusicList
                     .OrderBy(item => item.musicName)
                     .ThenBy(item => item.musicId).ToList();
+                SettingValue.lastMusicSorting = 1;
                 break;
 
             //$ Difficulty => MusicId
@@ -48,6 +50,7 @@ public class MusicSelect : MonoBehaviour
                 SelectableMusicList = SelectableMusicList
                     .OrderBy(item => item.difficulty[s_nowDifficulty])
                     .ThenBy(item => item.musicId).ToList();
+                SettingValue.lastMusicSorting = 2;
                 break;
 
             //$ LowestBpm => MusicId
@@ -55,6 +58,7 @@ public class MusicSelect : MonoBehaviour
                 SelectableMusicList = SelectableMusicList
                     .OrderBy(item => item.lowestBpm)
                     .ThenBy(item => item.musicId).ToList();
+                SettingValue.lastMusicSorting = 3;
                 break;
 
             //$ HighestBpm => MusicId
@@ -62,6 +66,7 @@ public class MusicSelect : MonoBehaviour
                 SelectableMusicList = SelectableMusicList
                     .OrderBy(item => item.highestBpm)
                     .ThenBy(item => item.musicId).ToList();
+                SettingValue.lastMusicSorting = 4;
                 break;
 
             //$ BestScore => MusicId
@@ -69,10 +74,10 @@ public class MusicSelect : MonoBehaviour
                 SelectableMusicList = SelectableMusicList
                     .OrderBy(item => item.bestScore[s_nowDifficulty])
                     .ThenBy(item => item.musicId).ToList();
+                SettingValue.lastMusicSorting = 5;
                 break;
         }
 
         if (isSortingReversed) { SelectableMusicList.Reverse(); }
     }
-
 }
