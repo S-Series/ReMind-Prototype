@@ -80,6 +80,15 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""8454f138-f100-4f44-a420-54eddb3742a4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -258,6 +267,50 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Two Modifiers"",
+                    ""id"": ""257d5b1b-c15d-4871-b831-d729f8cfa54d"",
+                    ""path"": ""TwoModifiers"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier1"",
+                    ""id"": ""74952248-d9f4-4f8e-9d6a-65e9edd50c53"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""modifier2"",
+                    ""id"": ""c86e23e6-9122-4864-807f-87bf99da36bd"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""7cfd0088-2108-44f9-b669-0fbd4bc57e2f"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -361,6 +414,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         m_OnMenu_MoveRight = m_OnMenu.FindAction("MoveRight", throwIfNotFound: true);
         m_OnMenu_Cancel = m_OnMenu.FindAction("Cancel", throwIfNotFound: true);
         m_OnMenu_Select = m_OnMenu.FindAction("Select", throwIfNotFound: true);
+        m_OnMenu_Newaction = m_OnMenu.FindAction("New action", throwIfNotFound: true);
         // GamePlay
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_Newaction = m_GamePlay.FindAction("New action", throwIfNotFound: true);
@@ -429,6 +483,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_OnMenu_MoveRight;
     private readonly InputAction m_OnMenu_Cancel;
     private readonly InputAction m_OnMenu_Select;
+    private readonly InputAction m_OnMenu_Newaction;
     public struct OnMenuActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -439,6 +494,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         public InputAction @MoveRight => m_Wrapper.m_OnMenu_MoveRight;
         public InputAction @Cancel => m_Wrapper.m_OnMenu_Cancel;
         public InputAction @Select => m_Wrapper.m_OnMenu_Select;
+        public InputAction @Newaction => m_Wrapper.m_OnMenu_Newaction;
         public InputActionMap Get() { return m_Wrapper.m_OnMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -466,6 +522,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Select.started -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnSelect;
+                @Newaction.started -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnNewaction;
             }
             m_Wrapper.m_OnMenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -488,6 +547,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
             }
         }
     }
@@ -578,6 +640,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         void OnMoveRight(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
+        void OnNewaction(InputAction.CallbackContext context);
     }
     public interface IGamePlayActions
     {
