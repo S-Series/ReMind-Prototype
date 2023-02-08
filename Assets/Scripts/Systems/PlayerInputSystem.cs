@@ -73,7 +73,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Select"",
+                    ""name"": ""Submit"",
                     ""type"": ""Button"",
                     ""id"": ""0edb58f3-bbd5-482c-8804-cbbebac4bf89"",
                     ""expectedControlType"": ""Button"",
@@ -253,7 +253,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Select"",
+                    ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -264,7 +264,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Select"",
+                    ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -285,7 +285,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -296,7 +296,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -307,7 +307,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -413,7 +413,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         m_OnMenu_MoveLeft = m_OnMenu.FindAction("MoveLeft", throwIfNotFound: true);
         m_OnMenu_MoveRight = m_OnMenu.FindAction("MoveRight", throwIfNotFound: true);
         m_OnMenu_Cancel = m_OnMenu.FindAction("Cancel", throwIfNotFound: true);
-        m_OnMenu_Select = m_OnMenu.FindAction("Select", throwIfNotFound: true);
+        m_OnMenu_Submit = m_OnMenu.FindAction("Submit", throwIfNotFound: true);
         m_OnMenu_Newaction = m_OnMenu.FindAction("New action", throwIfNotFound: true);
         // GamePlay
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
@@ -482,7 +482,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_OnMenu_MoveLeft;
     private readonly InputAction m_OnMenu_MoveRight;
     private readonly InputAction m_OnMenu_Cancel;
-    private readonly InputAction m_OnMenu_Select;
+    private readonly InputAction m_OnMenu_Submit;
     private readonly InputAction m_OnMenu_Newaction;
     public struct OnMenuActions
     {
@@ -493,7 +493,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         public InputAction @MoveLeft => m_Wrapper.m_OnMenu_MoveLeft;
         public InputAction @MoveRight => m_Wrapper.m_OnMenu_MoveRight;
         public InputAction @Cancel => m_Wrapper.m_OnMenu_Cancel;
-        public InputAction @Select => m_Wrapper.m_OnMenu_Select;
+        public InputAction @Submit => m_Wrapper.m_OnMenu_Submit;
         public InputAction @Newaction => m_Wrapper.m_OnMenu_Newaction;
         public InputActionMap Get() { return m_Wrapper.m_OnMenu; }
         public void Enable() { Get().Enable(); }
@@ -519,9 +519,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Cancel.started -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnCancel;
                 @Cancel.performed -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnCancel;
                 @Cancel.canceled -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnCancel;
-                @Select.started -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnSelect;
+                @Submit.started -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnSubmit;
+                @Submit.performed -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnSubmit;
+                @Submit.canceled -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnSubmit;
                 @Newaction.started -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnNewaction;
                 @Newaction.performed -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnNewaction;
                 @Newaction.canceled -= m_Wrapper.m_OnMenuActionsCallbackInterface.OnNewaction;
@@ -544,9 +544,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Cancel.started += instance.OnCancel;
                 @Cancel.performed += instance.OnCancel;
                 @Cancel.canceled += instance.OnCancel;
-                @Select.started += instance.OnSelect;
-                @Select.performed += instance.OnSelect;
-                @Select.canceled += instance.OnSelect;
+                @Submit.started += instance.OnSubmit;
+                @Submit.performed += instance.OnSubmit;
+                @Submit.canceled += instance.OnSubmit;
                 @Newaction.started += instance.OnNewaction;
                 @Newaction.performed += instance.OnNewaction;
                 @Newaction.canceled += instance.OnNewaction;
@@ -639,7 +639,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         void OnMoveLeft(InputAction.CallbackContext context);
         void OnMoveRight(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
-        void OnSelect(InputAction.CallbackContext context);
+        void OnSubmit(InputAction.CallbackContext context);
         void OnNewaction(InputAction.CallbackContext context);
     }
     public interface IGamePlayActions

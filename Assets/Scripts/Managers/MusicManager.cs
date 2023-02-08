@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    public static List<Music> musics = new List<Music>();
+    public static List<MusicInfo> musics = new List<MusicInfo>();
 
     void Start()
     {
         for (int i = 0; i < transform.childCount - 1; i++)
         {
-            Music music;
-            music = transform.GetChild(i).GetComponent<Music>();
-            if (music.musicId != i + 1) { throw new System.Exception("Music Id Error!"); }
-            musics.Add(music);
+            MusicInfo info;
+            info = transform.GetChild(i).GetComponent<MusicInfo>();
+            if (info.musicId != i + 1) { throw new System.Exception("Music Id Error!"); }
+            musics.Add(info);
         }
     }
 
-    public static Music GetMusic(int musicIndex)
+    public static MusicInfo GetMusic(int musicIndex)
     {
         if (musicIndex >= musics.Count) { throw new System.Exception("Music Data Request Error!"); }
         return musics[musicIndex];

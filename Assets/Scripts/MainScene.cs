@@ -21,7 +21,7 @@ public class MainScene : MonoBehaviour
         playerInput.OnMenu.MoveLeft.performed += value => OnMoveLeft();
         playerInput.OnMenu.MoveRight.performed += value => OnMoveRight();
 
-        playerInput.OnMenu.Select.performed += value => OnSelect();
+        playerInput.OnMenu.Submit.performed += value => OnSubmit();
         playerInput.OnMenu.Cancel.performed += value => OnCancel();
     }
     public static void LoadScene()
@@ -55,7 +55,7 @@ public class MainScene : MonoBehaviour
 
     }
 
-    private void OnSelect()
+    private void OnSubmit()
     {
 
     }
